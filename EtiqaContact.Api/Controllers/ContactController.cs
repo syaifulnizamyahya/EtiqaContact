@@ -1,5 +1,6 @@
 ﻿using EtiqaContact.Application.DTOs;
 using EtiqaContact.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EtiqaContact.Api.Controllers;
@@ -23,6 +24,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles ="Admin")]
     public async Task<ActionResult<ContactDto>> Create(CreateContactDto createContactDto)
     {
         var contact = await _contactService.CreateAsync(createContactDto);
@@ -30,6 +32,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize]
     public async Task<ActionResult<ContactDto>> GetById(Guid id)
     {
         var contact = await _contactService.GetByIdAsync(id);
@@ -41,6 +44,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> Update(Guid id, CreateContactDto createContactDto)
     {
         await _contactService.UpdateAsync(id, createContactDto);
@@ -48,6 +52,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> Delete(Guid id)
     {
         await _contactService.DeleteAsync(id);

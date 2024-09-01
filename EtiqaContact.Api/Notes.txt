@@ -1,2 +1,4 @@
-﻿dotnet ef migrations add <MigrationName> -p EtiqaContact.Infrastructure -s EtiqaContact.Api
+﻿dotnet run --urls="https://localhost:5001"
+
+dotnet ef migrations add <MigrationName> -p EtiqaContact.Infrastructure -s EtiqaContact.Api
 dotnet ef database update -p EtiqaContact.Infrastructure -s EtiqaContact.Api
