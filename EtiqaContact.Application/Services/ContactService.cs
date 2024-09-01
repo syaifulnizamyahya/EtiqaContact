@@ -35,6 +35,32 @@ public class ContactService : IContactService
     public async Task<ContactDto> GetByIdAsync(Guid id)
     {
         var contact = await _context.Contacts.FindAsync(id);
+        if (contact == null)
+        {
+            throw new KeyNotFoundException("Contact not found");
+        }
         return _mapper.Map<ContactDto>(contact);
+    }
+
+    public async Task UpdateAsync(Guid id, CreateContactDto createContactDto)
+    {
+        var contact = await _context.Contacts.FindAsync(id);
+        if (contact == null)
+        {
+            throw new KeyNotFoundException("Contact not found");
+        }
+        _mapper.Map(createContactDto, contact);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(Guid id)
+    {
+        var contact = await _context.Contacts.FindAsync(id);
+        if (contact == null)
+        {
+            throw new KeyNotFoundException("Contact not found");
+        }
+        _context.Contacts.Remove(contact);
+        await _context.SaveChangesAsync();
     }
 }

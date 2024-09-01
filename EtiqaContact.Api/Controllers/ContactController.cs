@@ -39,4 +39,18 @@ public class ContactsController : ControllerBase
         }
         return Ok(contact);
     }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> Update(Guid id, CreateContactDto createContactDto)
+    {
+        await _contactService.UpdateAsync(id, createContactDto);
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(Guid id)
+    {
+        await _contactService.DeleteAsync(id);
+        return NoContent();
+    }
 }
