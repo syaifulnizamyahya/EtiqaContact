@@ -1,0 +1,6 @@
+@EtiqaContact.Api_HostAddress = http://localhost:5226
+
+GET {{EtiqaContact.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

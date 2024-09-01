@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35201.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiqaContact", "EtiqaContact\EtiqaContact.csproj", "{7FDAFB19-473E-4E09-93AD-51A2E4727625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact", "EtiqaContact\EtiqaContact.csproj", "{7FDAFB19-473E-4E09-93AD-51A2E4727625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiqaContact.Application", "EtiqaContact.Application\EtiqaContact.Application.csproj", "{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiqaContact.Domain", "EtiqaContact.Domain\EtiqaContact.Domain.csproj", "{1433C443-3768-438E-9F55-819C7F441343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiqaContact.Insfrastructure", "EtiqaContact.Insfrastructure\EtiqaContact.Insfrastructure.csproj", "{041AFC86-AECD-4A50-9C51-D75CF59DC27C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiqaContact.Api", "EtiqaContact.Api\EtiqaContact.Api.csproj", "{955C5278-4C90-4912-9404-4715AC182FB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{7FDAFB19-473E-4E09-93AD-51A2E4727625}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FDAFB19-473E-4E09-93AD-51A2E4727625}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FDAFB19-473E-4E09-93AD-51A2E4727625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1433C443-3768-438E-9F55-819C7F441343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1433C443-3768-438E-9F55-819C7F441343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1433C443-3768-438E-9F55-819C7F441343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1433C443-3768-438E-9F55-819C7F441343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041AFC86-AECD-4A50-9C51-D75CF59DC27C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041AFC86-AECD-4A50-9C51-D75CF59DC27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041AFC86-AECD-4A50-9C51-D75CF59DC27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041AFC86-AECD-4A50-9C51-D75CF59DC27C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955C5278-4C90-4912-9404-4715AC182FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955C5278-4C90-4912-9404-4715AC182FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955C5278-4C90-4912-9404-4715AC182FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955C5278-4C90-4912-9404-4715AC182FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
