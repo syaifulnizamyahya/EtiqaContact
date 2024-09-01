@@ -1,0 +1,2 @@
+﻿dotnet ef migrations add InitialCreate -p EtiqaContact.Infrastructure -s EtiqaContact.Api
+dotnet ef database update -p EtiqaContact.Infrastructure -s EtiqaContact.Api
