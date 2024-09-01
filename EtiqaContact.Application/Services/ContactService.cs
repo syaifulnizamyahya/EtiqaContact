@@ -4,6 +4,7 @@ using EtiqaContact.Application.Interfaces;
 using EtiqaContact.Domain.Entities;
 using EtiqaContact.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+
 namespace EtiqaContact.Application.Services;
 
 public class ContactService : IContactService
@@ -28,6 +29,12 @@ public class ContactService : IContactService
         var contact = _mapper.Map<Contact>(createContactDto);
         _context.Contacts.Add(contact);
         await _context.SaveChangesAsync();
+        return _mapper.Map<ContactDto>(contact);
+    }
+
+    public async Task<ContactDto> GetByIdAsync(Guid id)
+    {
+        var contact = await _context.Contacts.FindAsync(id);
         return _mapper.Map<ContactDto>(contact);
     }
 }

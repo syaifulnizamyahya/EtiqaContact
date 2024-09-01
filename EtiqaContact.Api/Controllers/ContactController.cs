@@ -26,6 +26,17 @@ public class ContactsController : ControllerBase
     public async Task<ActionResult<ContactDto>> Create(CreateContactDto createContactDto)
     {
         var contact = await _contactService.CreateAsync(createContactDto);
+        return CreatedAtAction(nameof(GetById), new { id = contact.Id }, contact);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<ContactDto>> GetById(Guid id)
+    {
+        var contact = await _contactService.GetByIdAsync(id);
+        if (contact == null)
+        {
+            return NotFound();
+        }
         return Ok(contact);
     }
 }
