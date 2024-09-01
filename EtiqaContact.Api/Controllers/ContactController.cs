@@ -17,18 +17,10 @@ public class ContactsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ContactDto>>> GetAll()
+    public async Task<ActionResult<IEnumerable<ContactDto>>> GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
     {
-        var contacts = await _contactService.GetAllAsync();
+        var contacts = await _contactService.GetAllAsync(pageNumber, pageSize);
         return Ok(contacts);
-    }
-
-    [HttpPost]
-    [Authorize(Roles ="Admin")]
-    public async Task<ActionResult<ContactDto>> Create(CreateContactDto createContactDto)
-    {
-        var contact = await _contactService.CreateAsync(createContactDto);
-        return CreatedAtAction(nameof(GetById), new { id = contact.Id }, contact);
     }
 
     [HttpGet("{id}")]
@@ -41,6 +33,14 @@ public class ContactsController : ControllerBase
             return NotFound();
         }
         return Ok(contact);
+    }
+
+    [HttpPost]
+    [Authorize(Roles ="Admin")]
+    public async Task<ActionResult<ContactDto>> Create(CreateContactDto createContactDto)
+    {
+        var contact = await _contactService.CreateAsync(createContactDto);
+        return CreatedAtAction(nameof(GetById), new { id = contact.Id }, contact);
     }
 
     [HttpPut("{id}")]

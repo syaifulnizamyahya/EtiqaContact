@@ -18,18 +18,14 @@ public class ContactService : IContactService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<ContactDto>> GetAllAsync()
+    public async Task<IEnumerable<ContactDto>> GetAllAsync(int pageNumber, int pageSize)
     {
-        var contacts = await _context.Contacts.ToListAsync();
-        return _mapper.Map<List<ContactDto>>(contacts);
-    }
+        var contacts = await _context.Contacts
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
 
-    public async Task<ContactDto> CreateAsync(CreateContactDto createContactDto)
-    {
-        var contact = _mapper.Map<Contact>(createContactDto);
-        _context.Contacts.Add(contact);
-        await _context.SaveChangesAsync();
-        return _mapper.Map<ContactDto>(contact);
+        return _mapper.Map<List<ContactDto>>(contacts);
     }
 
     public async Task<ContactDto> GetByIdAsync(Guid id)
@@ -39,6 +35,14 @@ public class ContactService : IContactService
         {
             throw new KeyNotFoundException("Contact not found");
         }
+        return _mapper.Map<ContactDto>(contact);
+    }
+
+    public async Task<ContactDto> CreateAsync(CreateContactDto createContactDto)
+    {
+        var contact = _mapper.Map<Contact>(createContactDto);
+        _context.Contacts.Add(contact);
+        await _context.SaveChangesAsync();
         return _mapper.Map<ContactDto>(contact);
     }
 
