@@ -21,4 +21,11 @@ public class ContactsController : ControllerBase
         var contacts = await _contactService.GetAllAsync();
         return Ok(contacts);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<ContactDto>> Create(CreateContactDto createContactDto)
+    {
+        var contact = await _contactService.CreateAsync(createContactDto);
+        return Ok(contact);
+    }
 }

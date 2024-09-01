@@ -10,4 +10,5 @@ namespace EtiqaContact.Application.Interfaces;
 public interface IContactService
 {
     Task<IEnumerable<ContactDto>> GetAllAsync();
+    Task<ContactDto> CreateAsync(CreateContactDto createContactDto);
 }

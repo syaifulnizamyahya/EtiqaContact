@@ -22,4 +22,12 @@ public class ContactService : IContactService
         var contacts = await _context.Contacts.ToListAsync();
         return _mapper.Map<List<ContactDto>>(contacts);
     }
+
+    public async Task<ContactDto> CreateAsync(CreateContactDto createContactDto)
+    {
+        var contact = _mapper.Map<Contact>(createContactDto);
+        _context.Contacts.Add(contact);
+        await _context.SaveChangesAsync();
+        return _mapper.Map<ContactDto>(contact);
+    }
 }
