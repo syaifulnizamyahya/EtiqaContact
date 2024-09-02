@@ -84,35 +84,35 @@ An ASP.Net Core Web API with these requirements
    1. [x] Swagger documentation
 1. [ ] Unit testing
    1. [ ] MSTest unit testing
-   2. [ ] nUnit unit testing
-   3. [ ] xUnit unit testing
-   4. [ ] Use 3As : Arrange, Act, Asset
+   1. [ ] nUnit unit testing
+   1. [ ] xUnit unit testing
+   1. [ ] Use 3As : Arrange, Act, Asset
 1. [ ] Integration testing
    1. [ ] MSTest unit testing
-   2. [ ] nUnit unit testing
-   3. [ ] xUnit unit testing
-   4. [ ] Use 3As : Arrange, Act, Asset
+   1. [ ] nUnit unit testing
+   1. [ ] xUnit unit testing
+   1. [ ] Use 3As : Arrange, Act, Asset
 1. [ ] Performance
    1. [x] Asynchronous
-   2. [ ] In-memory caching
-   3. [ ] Distributed caching
-   4. [ ] Hybrid caching
-   5. [ ] Response caching
+   1. [ ] In-memory caching
+   1. [ ] Distributed caching
+   1. [ ] Hybrid caching
+   1. [ ] Response caching
 1. [ ] Secure API
    1. [ ] Rate limiting
-   2. [x] HTTPS
-   3. [ ] CORS: Configure Cross-Origin Resource Sharing policies to control which domain can access API
+   1. [x] HTTPS
+   1. [ ] CORS: Configure Cross-Origin Resource Sharing policies to control which domain can access API
 1. [ ] Logging
     1. [ ] Serilog
 1. [ ] Monitoring
     1. [ ] Metrics collection (Prometheus)
-    2. [ ] Visualization (Grafana)
-    3. [ ] Tracing (OpenTelemetry)
+    1. [ ] Visualization (Grafana)
+    1. [ ] Tracing (OpenTelemetry)
 1. [ ] Entity Framework Core
     1. [x] Use AsNoTracking for read-only queries.
     1. [ ] Select only required columns.
-    2. [x] Use FindAsync for Single Primary Key Lookups.
-    3. [ ] Batch queries.
+    1. [x] Use FindAsync for Single Primary Key Lookups.
+    1. [ ] Batch queries.
     1. [ ] Use indexes for frequently queried columns using Data Annotation in entity class.
     1. [ ] Use compiled queries for repeated patterns.
     1. [x] Use connection pooling to reduce connection overhead.
@@ -122,14 +122,14 @@ An ASP.Net Core Web API with these requirements
     1. [ ] Docker
 1. [ ] CI/CD
     1. [ ] CI/CD pipeline (GitHub Actions)
-    2. [ ] Deployment target (Azure App Service) 
-1. [ ] Clean Code opinionated folder structure
-    1. [x] Domain
-    2. [x] Application
-    3. [x] Infrastructure
-    4. [x] Presentation
-37. [ ] Client
+    1. [ ] Deployment target (Azure App Service)
+1. [x] Clean Code opinionated folder structure
+   1. [x] Presentation Layer (EtiqaContact.Api)
+   1. [x] Service Layer (EtiqaContact.Application)
+   1. [x] Domain Layer (EtiqaContact.Domain)
+   1. [x] Data Access Layer (EtiqaContact.Infrastructure)
+1. [ ] Client
     1. [ ] Browser
-    2. [ ] Mobile
-    3. [ ] Desktop
-    4. [ ] .Net Multiplatform (Blazor Hybrid, MAUI, Uno)
+    1. [ ] Mobile
+    1. [ ] Desktop
+    1. [ ] .Net Multiplatform (Blazor Hybrid, MAUI, Uno)

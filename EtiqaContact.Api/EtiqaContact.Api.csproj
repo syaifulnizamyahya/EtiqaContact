@@ -23,8 +23,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EtiqaContact.Application\EtiqaContact.Application.csproj" />
-    <ProjectReference Include="..\EtiqaContact.Domain\EtiqaContact.Domain.csproj" />
     <ProjectReference Include="..\EtiqaContact.Infrastructure\EtiqaContact.Infrastructure.csproj" />
+    <!--<ProjectReference Include="..\EtiqaContact.Domain\EtiqaContact.Domain.csproj" />-->
+    <!--<ProjectReference Include="..\EtiqaContact.Infrastructure\EtiqaContact.Infrastructure.csproj" />-->
   </ItemGroup>
 
 </Project>

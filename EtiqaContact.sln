@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact.Obsolete", "Et
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact.Application", "EtiqaContact.Application\EtiqaContact.Application.csproj", "{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}"
 	ProjectSection(ProjectDependencies) = postProject
-		{041AFC86-AECD-4A50-9C51-D75CF59DC27C} = {041AFC86-AECD-4A50-9C51-D75CF59DC27C}
 		{1433C443-3768-438E-9F55-819C7F441343} = {1433C443-3768-438E-9F55-819C7F441343}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact.Domain", "EtiqaContact.Domain\EtiqaContact.Domain.csproj", "{1433C443-3768-438E-9F55-819C7F441343}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact.Infrastructure", "EtiqaContact.Infrastructure\EtiqaContact.Infrastructure.csproj", "{041AFC86-AECD-4A50-9C51-D75CF59DC27C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1433C443-3768-438E-9F55-819C7F441343} = {1433C443-3768-438E-9F55-819C7F441343}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact.Api", "EtiqaContact.Api\EtiqaContact.Api.csproj", "{955C5278-4C90-4912-9404-4715AC182FB3}"
 	ProjectSection(ProjectDependencies) = postProject
