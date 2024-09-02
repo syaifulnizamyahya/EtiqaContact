@@ -23,6 +23,7 @@ public class ContactService : IContactService
         var contacts = await _context.Contacts
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
+            .AsNoTracking()
             .ToListAsync();
 
         return _mapper.Map<List<ContactDto>>(contacts);

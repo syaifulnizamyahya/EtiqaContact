@@ -16,14 +16,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// TODO: Sqlite is used to simplify development. Change to other RDBMS here.
 builder.Services.AddDbContext<ContactDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Scoped service to ensure each request gets its own instance
 builder.Services.AddScoped<IContactService, ContactService>();
 
 builder.Services.AddAutoMapper(typeof(ContactMappingProfile));
 
-// TODO: Configure JWT settings
+// TODO: Simple JWT settings is used to simplify development.
 var secretKey = builder.Configuration["JwtSettings:SecretKey"];
 if (string.IsNullOrEmpty(secretKey))
 {
