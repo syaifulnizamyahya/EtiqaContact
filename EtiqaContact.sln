@@ -24,6 +24,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtiqaContact.Api", "EtiqaCo
 		{6FFE34DF-203D-4D3F-BAF6-865843B3F3A8} = {6FFE34DF-203D-4D3F-BAF6-865843B3F3A8}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtiqaContact.ApplicationTests", "EtiqaContact.ApplicationTests\EtiqaContact.ApplicationTests.csproj", "{4A226A06-E1FC-4AED-BFFA-B5F3EE2D3BA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{955C5278-4C90-4912-9404-4715AC182FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{955C5278-4C90-4912-9404-4715AC182FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{955C5278-4C90-4912-9404-4715AC182FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A226A06-E1FC-4AED-BFFA-B5F3EE2D3BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A226A06-E1FC-4AED-BFFA-B5F3EE2D3BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A226A06-E1FC-4AED-BFFA-B5F3EE2D3BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A226A06-E1FC-4AED-BFFA-B5F3EE2D3BA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -89,10 +89,12 @@ An ASP.Net Core Web API with these requirements
 1. [ ] Filter and sorting
    1. [ ] Filter and sort data via query parameters 
 1. [ ] Unit testing
-   1. [ ] MSTest unit testing
+   1. [x] MSTest unit testing
    1. [ ] nUnit unit testing
    1. [ ] xUnit unit testing
-   1. [ ] Use 3As : Arrange, Act, Asset
+   1. [x] Use 3As : Arrange, Act, Asset
+   1. [ ] MethodName_StateUnderTest_ExpectedBehavior
+   1. [x] MethodName_ExpectedBehavior_StateUnderTest
 1. [ ] Integration testing
    1. [ ] MSTest unit testing
    1. [ ] nUnit unit testing
