@@ -64,6 +64,8 @@ An ASP.Net Core Web API with these requirements
 1. [x] Dependency injection
    1. [x] Service registration
    1. [x] Scoped services to ensure one instance per request
+1. [x] Documentation
+   1. [x] Swagger documentation
 1. [x] Versioning
    1. [x] Versioning in routing (/api/v1/contacts)
 1. [x] Error handling
@@ -86,8 +88,6 @@ An ASP.Net Core Web API with these requirements
    1. [x] Pagination with default values to improve performance
 1. [ ] Filter and sorting
    1. [ ] Filter and sort data via query parameters 
-1. [x] Documentation
-   1. [x] Swagger documentation
 1. [ ] Unit testing
    1. [ ] MSTest unit testing
    1. [ ] nUnit unit testing
