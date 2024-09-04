@@ -70,6 +70,12 @@ public class ContactsController : ControllerBase
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult> Update(Guid id, CreateContactDto createContactDto)
     {
+        if (!ModelState.IsValid)
+        {
+            _logger.LogWarning("Invalid model state.");
+            return BadRequest(ModelState);
+        }
+
         using (LogContext.PushProperty("ActionName", nameof(Update)))
         {
             _logger.LogInformation("Updating Contact with {ContactId}.", id);

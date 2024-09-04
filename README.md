@@ -61,6 +61,9 @@ An ASP.Net Core Web API with these requirements
 1. [x] Controllers
    1. [x] Naming convention (ContactController)
    1. [x] Controller contains no business logic
+1. [x] Dependency injection
+   1. [x] Service registration
+   1. [x] Scoped services to ensure one instance per request
 1. [x] Versioning
    1. [x] Versioning in routing (/api/v1/contacts)
 1. [x] Error handling
@@ -70,10 +73,9 @@ An ASP.Net Core Web API with these requirements
    1. [x] Standard error response
          1. [x] **404 Not Found** for invalid resource id 
          1. [x] **400 Bad Request** for invalid model state
-   1. [x] Validation of input data (ModelState validation)
-1. [x] Dependency injection
-   1. [x] Service registration
-   1. [x] Scoped services to ensure one instance per request
+   1. [x] Validation of input data 
+         1. [x] Model state validation for create and update operations
+         1. [ ] Fluent validation for create and update operations
 1. [x] Authentication and authorization
    1. [x] JWT Tokens
    1. [x] Role based access control
