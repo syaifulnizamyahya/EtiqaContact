@@ -6,9 +6,9 @@ namespace EtiqaContact.Infrastructure.Repositories;
 
 public class Repository<T> : IRepository<T> where T : class
 {
-    protected readonly ContactDbContext _context;
+    protected readonly ApplicationDbContext _context;
 
-    public Repository(ContactDbContext context)
+    public Repository(ApplicationDbContext context)
     {
         _context = context;
     }

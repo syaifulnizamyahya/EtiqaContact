@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EtiqaContact.Infrastructure.Migrations
 {
-    [DbContext(typeof(ContactDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240901075802_InitialCreate")]
     partial class InitialCreate
     {

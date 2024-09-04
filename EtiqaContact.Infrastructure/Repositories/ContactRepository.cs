@@ -7,7 +7,7 @@ namespace EtiqaContact.Infrastructure.Repositories;
 
 public class ContactRepository : Repository<Contact>, IContactRepository
 {
-    public ContactRepository(ContactDbContext context) : base(context)
+    public ContactRepository(ApplicationDbContext context) : base(context)
     {
     }
 }

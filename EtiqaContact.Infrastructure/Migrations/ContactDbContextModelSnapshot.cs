@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EtiqaContact.Infrastructure.Migrations
 {
-    [DbContext(typeof(ContactDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class ContactDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

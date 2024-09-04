@@ -39,19 +39,21 @@ public class ContactService : IContactService
     public async Task UpdateAsync(Guid id, CreateContactDto createContactDto)
     {
         var contact = await _contactRepository.GetByIdAsync(id);
-        if (contact != null)
+        if (contact == null)
         {
-            _mapper.Map(createContactDto, contact);
-            await _contactRepository.UpdateAsync(contact);
+            throw new KeyNotFoundException("Contact not found");
         }
+        _mapper.Map(createContactDto, contact);
+        await _contactRepository.UpdateAsync(contact);
     }
 
     public async Task DeleteAsync(Guid id)
     {
         var contact = await _contactRepository.GetByIdAsync(id);
-        if (contact != null)
+        if (contact == null)
         {
-            await _contactRepository.DeleteAsync(id);
+            throw new KeyNotFoundException("Contact not found");
         }
+        await _contactRepository.DeleteAsync(id);
     }
 }

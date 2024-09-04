@@ -8,8 +8,15 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using EtiqaContact.Domain.Repositories;
 using EtiqaContact.Infrastructure.Repositories;
+using Serilog;
+using EtiqaContact.Api.MiddleWares;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+builder.Host.UseSerilog();
 
 // Add services to the container.
 
@@ -19,7 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // TODO: Sqlite is used to simplify development. Change to other RDBMS here.
-builder.Services.AddDbContext<ContactDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
@@ -47,9 +54,9 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["JwtSettings:Issuer"],  
-        ValidAudience = builder.Configuration["JwtSettings:Audience"],  
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))  
+        ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
+        ValidAudience = builder.Configuration["JwtSettings:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
     };
 });
 
@@ -63,6 +70,10 @@ builder.Services.AddAuthorization(options =>
 });
 
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
+
+app.UseMiddleware<ErrorHandlingMiddleWare>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

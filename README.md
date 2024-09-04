@@ -63,9 +63,9 @@ An ASP.Net Core Web API with these requirements
    1. [x] Controller contains no business logic
 1. [x] Versioning
    1. [x] Versioning in routing (/api/v1/contacts)
-1. [ ] Error handling
-   1. [ ] Global exception handling
-   1. [ ] Standar error response
+1. [x] Error handling
+   1. [x] Global exception handling
+   1. [x] Standard error response
    1. [ ] Validation of input data
 1. [x] Dependency injection
    1. [x] Service registration
