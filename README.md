@@ -106,8 +106,8 @@ An ASP.Net Core Web API with these requirements
    1. [ ] Rate limiting
    1. [x] HTTPS
    1. [ ] CORS: Configure Cross-Origin Resource Sharing policies to control which domain can access API
-1. [ ] Logging
-    1. [ ] Serilog
+1. [x] Logging
+    1. [x] Serilog
 1. [ ] Monitoring
     1. [ ] Metrics collection (Prometheus)
     1. [ ] Visualization (Grafana)
